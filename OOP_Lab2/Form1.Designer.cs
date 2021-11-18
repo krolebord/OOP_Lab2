@@ -29,68 +29,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.FilterButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.DeveloperBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PublisherBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.MaxUserScoreNumeric = new System.Windows.Forms.NumericUpDown();
+            this.MinUserScoreNumeric = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.MinOwnersNumeric = new System.Windows.Forms.NumericUpDown();
+            this.FreeCheckbox = new System.Windows.Forms.CheckBox();
+            this.MaxConcurrentUsersNumeric = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.methodSelector = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxUserScoreNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinUserScoreNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinOwnersNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxConcurrentUsersNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
-            //
-            // textBox1
-            //
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(309, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(690, 369);
-            this.textBox1.TabIndex = 1;
             //
             // FilterButton
             //
             this.FilterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FilterButton.Location = new System.Drawing.Point(159, 340);
+            this.FilterButton.Location = new System.Drawing.Point(159, 508);
             this.FilterButton.Name = "FilterButton";
             this.FilterButton.Size = new System.Drawing.Size(144, 41);
             this.FilterButton.TabIndex = 2;
             this.FilterButton.Text = "Filter";
             this.FilterButton.UseVisualStyleBackColor = true;
+            this.FilterButton.Click += FilterButton_Click;
             //
             // SaveButton
             //
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SaveButton.Location = new System.Drawing.Point(12, 340);
+            this.SaveButton.Location = new System.Drawing.Point(12, 508);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(144, 41);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += SaveButtonOnClick;
             //
             // ClearButton
             //
-            this.ClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.ClearButton.Location = new System.Drawing.Point(88, 231);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(215, 27);
@@ -109,19 +100,19 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Filters:";
             //
-            // textBox2
+            // NameBox
             //
-            this.textBox2.Location = new System.Drawing.Point(88, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 23);
-            this.textBox2.TabIndex = 6;
+            this.NameBox.Location = new System.Drawing.Point(88, 31);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(215, 23);
+            this.NameBox.TabIndex = 6;
             //
-            // textBox3
+            // DeveloperBox
             //
-            this.textBox3.Location = new System.Drawing.Point(88, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(215, 23);
-            this.textBox3.TabIndex = 7;
+            this.DeveloperBox.Location = new System.Drawing.Point(88, 60);
+            this.DeveloperBox.Name = "DeveloperBox";
+            this.DeveloperBox.Size = new System.Drawing.Size(215, 23);
+            this.DeveloperBox.TabIndex = 7;
             //
             // label2
             //
@@ -150,12 +141,12 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Publisher:";
             //
-            // textBox4
+            // PublisherBox
             //
-            this.textBox4.Location = new System.Drawing.Point(88, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 23);
-            this.textBox4.TabIndex = 11;
+            this.PublisherBox.Location = new System.Drawing.Point(88, 89);
+            this.PublisherBox.Name = "PublisherBox";
+            this.PublisherBox.Size = new System.Drawing.Size(215, 23);
+            this.PublisherBox.TabIndex = 11;
             //
             // label5
             //
@@ -166,24 +157,24 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "User score:";
             //
-            // numericUpDown1
+            // MaxUserScoreNumeric
             //
-            this.numericUpDown1.Location = new System.Drawing.Point(220, 119);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(83, 23);
-            this.numericUpDown1.TabIndex = 14;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.MaxUserScoreNumeric.Location = new System.Drawing.Point(220, 119);
+            this.MaxUserScoreNumeric.Name = "MaxUserScoreNumeric";
+            this.MaxUserScoreNumeric.Size = new System.Drawing.Size(83, 23);
+            this.MaxUserScoreNumeric.TabIndex = 14;
+            this.MaxUserScoreNumeric.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
             //
-            // numericUpDown2
+            // MinUserScoreNumeric
             //
-            this.numericUpDown2.Location = new System.Drawing.Point(88, 119);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(83, 23);
-            this.numericUpDown2.TabIndex = 15;
+            this.MinUserScoreNumeric.Location = new System.Drawing.Point(88, 119);
+            this.MinUserScoreNumeric.Name = "MinUserScoreNumeric";
+            this.MinUserScoreNumeric.Size = new System.Drawing.Size(83, 23);
+            this.MinUserScoreNumeric.TabIndex = 15;
             //
             // label6
             //
@@ -203,50 +194,50 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Min owners:";
             //
-            // numericUpDown3
+            // MinOwnersNumeric
             //
-            this.numericUpDown3.Increment = new decimal(new int[] {
+            this.MinOwnersNumeric.Increment = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown3.Location = new System.Drawing.Point(88, 148);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.MinOwnersNumeric.Location = new System.Drawing.Point(88, 148);
+            this.MinOwnersNumeric.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(215, 23);
-            this.numericUpDown3.TabIndex = 18;
+            this.MinOwnersNumeric.Name = "MinOwnersNumeric";
+            this.MinOwnersNumeric.Size = new System.Drawing.Size(215, 23);
+            this.MinOwnersNumeric.TabIndex = 18;
             //
-            // checkBox1
+            // FreeCheckbox
             //
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(48, 177);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 19);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "Free: ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.FreeCheckbox.AutoSize = true;
+            this.FreeCheckbox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FreeCheckbox.Location = new System.Drawing.Point(48, 177);
+            this.FreeCheckbox.Name = "FreeCheckbox";
+            this.FreeCheckbox.Size = new System.Drawing.Size(54, 19);
+            this.FreeCheckbox.TabIndex = 19;
+            this.FreeCheckbox.Text = "Free: ";
+            this.FreeCheckbox.UseVisualStyleBackColor = true;
             //
-            // numericUpDown4
+            // MaxConcurrentUsersNumeric
             //
-            this.numericUpDown4.Increment = new decimal(new int[] {
+            this.MaxConcurrentUsersNumeric.Increment = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown4.Location = new System.Drawing.Point(88, 202);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
+            this.MaxConcurrentUsersNumeric.Location = new System.Drawing.Point(88, 202);
+            this.MaxConcurrentUsersNumeric.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(215, 23);
-            this.numericUpDown4.TabIndex = 21;
+            this.MaxConcurrentUsersNumeric.Name = "MaxConcurrentUsersNumeric";
+            this.MaxConcurrentUsersNumeric.Size = new System.Drawing.Size(215, 23);
+            this.MaxConcurrentUsersNumeric.TabIndex = 21;
             //
             // label7
             //
@@ -257,62 +248,100 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Max CCU:";
             //
+            // webView21
+            //
+            this.webView21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Location = new System.Drawing.Point(309, 0);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(676, 560);
+            this.webView21.TabIndex = 22;
+            this.webView21.ZoomFactor = 1D;
+            //
+            // methodSelector
+            //
+            this.methodSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Bottom)))));
+            this.methodSelector.FormattingEnabled = true;
+            this.methodSelector.Location = new System.Drawing.Point(88, 479);
+            this.methodSelector.Name = "methodSelector";
+            this.methodSelector.Size = new System.Drawing.Size(215, 23);
+            this.methodSelector.TabIndex = 23;
+            this.methodSelector.SelectedIndexChanged += MethodSelectorOnSelectedIndexChanged;
+            //
+            // label9
+            //
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Bottom)))));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 482);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 15);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Method:";
+            //
             // Lab2Form
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 393);
-            this.Controls.Add(this.numericUpDown4);
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.methodSelector);
+            this.Controls.Add(this.webView21);
+            this.Controls.Add(this.MaxConcurrentUsersNumeric);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.FreeCheckbox);
+            this.Controls.Add(this.MinOwnersNumeric);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.MinUserScoreNumeric);
+            this.Controls.Add(this.MaxUserScoreNumeric);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.PublisherBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DeveloperBox);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.FilterButton);
-            this.Controls.Add(this.textBox1);
             this.Name = "Lab2Form";
             this.Text = "Lab2";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxUserScoreNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinUserScoreNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinOwnersNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxConcurrentUsersNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button FilterButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox NameBox;
+        private System.Windows.Forms.TextBox DeveloperBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox PublisherBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown MaxUserScoreNumeric;
+        private System.Windows.Forms.NumericUpDown MinUserScoreNumeric;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown MinOwnersNumeric;
+        private System.Windows.Forms.CheckBox FreeCheckbox;
+        private System.Windows.Forms.NumericUpDown MaxConcurrentUsersNumeric;
         private System.Windows.Forms.Label label7;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private System.Windows.Forms.ComboBox methodSelector;
+        private System.Windows.Forms.Label label9;
     }
 }

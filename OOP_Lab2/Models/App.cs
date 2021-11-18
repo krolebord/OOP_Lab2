@@ -1,8 +1,9 @@
-﻿using System.Text;
+﻿using System;
 using System.Xml.Serialization;
 
 namespace OOP_Lab2.Models
 {
+    [Serializable, XmlRoot("App", IsNullable = true)]
     public class App
     {
         [XmlElement("appid")]
@@ -31,35 +32,5 @@ namespace OOP_Lab2.Models
 
         [XmlElement("owners")]
         public string Owners { get; set; }
-
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.AppendFormat("{0}:", Name);
-            sb.AppendLine();
-
-            sb.AppendFormat("\tId: {0}", AppId);
-            sb.AppendLine();
-
-            sb.AppendFormat("\tDeveloper: {0}", Developers);
-            sb.AppendLine();
-
-            sb.AppendFormat("\tPublisher: {0}", Publishers);
-            sb.AppendLine();
-
-            sb.AppendFormat("\tPrice: {0:C}", (decimal)Price/100);
-            sb.AppendLine();
-
-            sb.AppendFormat("\tUser score: {0:P}", (double)PositiveReviews / (NegativeReviews + PositiveReviews));
-            sb.AppendLine();
-
-            sb.AppendFormat("\tOwners: {0}", Owners);
-            sb.AppendLine();
-
-            sb.AppendFormat("\tConcurrent users: {0}", ConcurrentUsers);
-            sb.AppendLine();
-
-            return sb.ToString();
-        }
     }
 }
