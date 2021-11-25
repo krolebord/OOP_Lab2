@@ -14,69 +14,82 @@ namespace OOP_Lab2.Services.FilteringStrategies
             var doc = new XmlDocument();
             doc.Load(xmlPath);
 
-            var result = new List<App>();
+            var result = doc.DocumentElement?.ChildNodes
+                .Cast<XmlNode>();
 
-            result = doc.DocumentElement?.ChildNodes
-                .Cast<XmlNode>()
-                .Where(node =>
+            if (result is null)
+            {
+                return new List<App>();
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.Name))
+            {
+                result = result.Where(node =>
                 {
-                    if (string.IsNullOrWhiteSpace(filter.Name))
-                        return true;
                     var propNode = node.SelectSingleNode("name");
                     return propNode is not null
                            && propNode.InnerText.Contains(filter.Name, StringComparison.InvariantCultureIgnoreCase);
-                })
-                .Where(node =>
+                });
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.Developer))
+            {
+                result = result.Where(node =>
                 {
-                    if (string.IsNullOrWhiteSpace(filter.Developer))
-                        return true;
                     var propNode = node.SelectSingleNode("developer");
                     return propNode is not null
                            && propNode.InnerText.Contains(filter.Developer, StringComparison.InvariantCultureIgnoreCase);
-                })
-                .Where(node =>
+                });
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.Publisher))
+            {
+                result = result.Where(node =>
                 {
-                    if (string.IsNullOrWhiteSpace(filter.Publisher))
-                        return true;
                     var propNode = node.SelectSingleNode("publisher");
                     return propNode is not null
                            && propNode.InnerText.Contains(filter.Publisher, StringComparison.InvariantCultureIgnoreCase);
-                })
-                .Where(node =>
+                });
+            }
+
+            if (filter.IsFree)
+            {
+                result = result.Where(node =>
                 {
-                    if (!filter.IsFree)
-                        return true;
                     var propNode = node.SelectSingleNode("price");
                     return propNode is not null
                            && propNode.InnerText == "0";
-                })
-                .Where(node =>
-                {
-                    if (filter.MinOwners == 0)
-                        return true;
+                });
+            }
 
+            if (filter.MinOwners != 0)
+            {
+                result = result.Where(node =>
+                {
                     var propNode = node.SelectSingleNode("owners");
                     if (propNode is null || !int.TryParse(propNode.InnerText.Split(' ').First().Replace(",", ""), out var owners))
                         return true;
 
                     return filter.MinOwners <= owners;
-                })
-                .Where(node =>
-                {
-                    if (filter.MaxConcurrentUsers == 0)
-                        return true;
+                });
+            }
 
+            if (filter.MaxConcurrentUsers != 0)
+            {
+                result = result.Where(node =>
+                {
                     var propNode = node.SelectSingleNode("ccu");
                     if (propNode is null || !int.TryParse(propNode.InnerText, out var ccu))
                         return true;
 
                     return filter.MaxConcurrentUsers >= ccu;
-                })
-                .Where(node =>
-                {
-                    if (filter.MinScore == 0 && filter.MaxScore == 100)
-                        return true;
+                });
+            }
 
+            if (filter.MinScore != 0 || filter.MaxScore != 100)
+            {
+                result = result.Where(node =>
+                {
                     var posNode = node.SelectSingleNode("positive");
                     var negNode = node.SelectSingleNode("negative");
                     if (posNode is null || negNode is null
@@ -86,11 +99,12 @@ namespace OOP_Lab2.Services.FilteringStrategies
 
                     var score = Math.Round((double)pos / (pos + neg) * 100);
                     return filter.MinScore <= score && score <= filter.MaxScore;
-                })
+                });
+            }
+
+            return result
                 .Select(node => AppsConverter.XmlToApp(node.OuterXml))
                 .ToList();
-
-            return result;
         }
     }
 }

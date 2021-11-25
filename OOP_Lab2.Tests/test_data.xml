@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Apps>
+  <App>
+    <appid>1</appid>
+    <name>Dota 2</name>
+    <developer>Valve</developer>
+    <publisher>Valve</publisher>
+    <positive>1343537</positive>
+    <negative>260064</negative>
+    <owners>100,000,000 .. 200,000,000</owners>
+    <price>0</price>
+    <ccu>569616</ccu>
+  </App>
+  <App>
+    <appid>2</appid>
+    <name>Counter-Strike: Global Offensive</name>
+    <developer>Valve, Hidden Path Entertainment</developer>
+    <publisher>Valve</publisher>
+    <positive>5296582</positive>
+    <negative>713258</negative>
+    <owners>50,000,000 .. 100,000,000</owners>
+    <price>0</price>
+    <ccu>695153</ccu>
+  </App>
+  <App>
+    <appid>3</appid>
+    <name>Warframe</name>
+    <developer>Digital Extremes</developer>
+    <publisher>Digital Extremes</publisher>
+    <positive>413961</positive>
+    <negative>43642</negative>
+    <owners>20,000,000 .. 50,000,000</owners>
+    <price>0</price>
+    <ccu>52688</ccu>
+  </App>
+  <App>
+    <appid>4</appid>
+    <name>Rust</name>
+    <developer>Facepunch Studios</developer>
+    <publisher>Facepunch Studios</publisher>
+    <positive>605718</positive>
+    <negative>92525</negative>
+    <owners>20,000,000 .. 50,000,000</owners>
+    <price>3999</price>
+    <ccu>73507</ccu>
+  </App>
+  <App>
+    <appid>5</appid>
+    <name>Tom Clancy's Rainbow Six Siege</name>
+    <developer>Ubisoft Montreal</developer>
+    <publisher>Ubisoft</publisher>
+    <positive>867852</positive>
+    <negative>125001</negative>
+    <owners>20,000,000 .. 50,000,000</owners>
+    <price>1999</price>
+    <ccu>44619</ccu>
+  </App>
+  <App>
+    <appid>6</appid>
+    <name>Apex Legends</name>
+    <developer>Respawn Entertainment</developer>
+    <publisher>Electronic Arts</publisher>
+    <positive>295221</positive>
+    <negative>46310</negative>
+    <owners>20,000,000 .. 50,000,000</owners>
+    <price>0</price>
+    <ccu>199528</ccu>
+  </App>
+</Apps>
